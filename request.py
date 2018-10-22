@@ -4,6 +4,8 @@ import sys
 
 url = sys.argv[1]
 response = requests.get(url)
+status_code = response.status_code
+print('status:', status_code)
 response_body = response.text
 if response_body.find('<') == -1:
 	print('it is error')
